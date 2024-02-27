@@ -11,6 +11,6 @@
 
         public IReadOnlyList<IDomainEvent> GetDomainEvents() => _domainEvents.ToList();
         public void ClearDomainEvents() => _domainEvents.Clear();
-        public void RaiseDomainEvent(IDomainEvent domainEvent) => _domainEvents.Add(domainEvent);
+        protected void RaiseDomainEvent(IDomainEvent domainEvent) => _domainEvents.Add(domainEvent);
     }
 }

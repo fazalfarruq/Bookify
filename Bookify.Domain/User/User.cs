@@ -1,4 +1,5 @@
 ﻿using Bookify.Domain.Abstractions;
+using Bookify.Domain.User.Events;
 
 namespace Bookify.Domain.User
 {
@@ -19,7 +20,10 @@ namespace Bookify.Domain.User
 
         public static User Create(Email email, FirstName firstName, LastName lastName)
         {
-            return new User(Guid.NewGuid(), email, firstName, lastName);
+            
+            var user = new User(Guid.NewGuid(), email, firstName, lastName);
+            user.RaiseDomainEvent(new UserCreatedDomainEvent(user.Id));
+            return user;
         }
     }
 }
