@@ -1,4 +1,4 @@
-﻿namespace Bookify.Domain
+﻿namespace Bookify.Domain.Shared
 {
     public record Currency
     {
