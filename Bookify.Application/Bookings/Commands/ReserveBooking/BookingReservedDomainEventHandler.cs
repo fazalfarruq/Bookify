@@ -4,7 +4,7 @@ using Bookify.Domain.Bookings.Events;
 using Bookify.Domain.User;
 using MediatR;
 
-namespace Bookify.Application.Bookings.ReserveBooking;
+namespace Bookify.Application.Bookings.Commands.ReserveBooking;
 
 public class BookingReservedDomainEventHandler : INotificationHandler<BookingReservedDomainEvent>
 {
